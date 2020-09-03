@@ -29,7 +29,7 @@ for fname in *.bed
 do
 	#echo Total interval number of $filename  >> ${filename/.bed/.info}
 	#wc -l $filename >> ${filename/.bed/.info}
-	cut -f 1 fname | sort | uniq -c > ${filename/.bed/.info} #Revised based on the presentation.
+	cut -f 1 $fname | sort | uniq -c > ${fname/.bed/.info} #Revised based on the presentation.
 done
 
 #Report first 10 intervals on 2L
