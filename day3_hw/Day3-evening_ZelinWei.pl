@@ -20,13 +20,16 @@ conda install igv
 igv
 
 #Count features in BDGP.Ensembl.81.gtf
-cut -f 3 BDGP6.Ensembl.81.gtf | sort | uniq -c | tail -8 > features.txt
+#cut -f 3 BDGP6.Ensembl.81.gtf | sort | uniq -c | tail -8 > features.txt
+cut -f 3 BDGP6.Ensembl.81.gtf | sort | uniq -c | grep -v '#' > features.txt #Revised based on the presentation.
+
 
 #Count total interval numbers
 for fname in *.bed
 do
-	echo Total interval number of $filename  >> ${filename/.bed/.info}
-	wc -l $filename >> ${filename/.bed/.info}
+	#echo Total interval number of $filename  >> ${filename/.bed/.info}
+	#wc -l $filename >> ${filename/.bed/.info}
+	cut -f 1 fname | sort | uniq -c > ${filename/.bed/.info} #Revised based on the presentation.
 done
 
 #Report first 10 intervals on 2L
