@@ -1,0 +1,9 @@
+total 1569232
+-rw-r--r--  1 zelinwei  staff  182276780  9  3 16:13 BDGP6.Ensembl.81.gtf
+-rw-r--r--@ 1 zelinwei  staff        352  9  3 16:21 Day3-evening_ZelinWei.pl
+-rw-r--r--  1 zelinwei  staff       8602  9  3 16:09 K27me3.bed
+-rw-r--r--  1 zelinwei  staff      75948  9  3 16:09 K4me3.bed
+-rw-r--r--  1 zelinwei  staff       5846  9  3 16:09 K9me3.bed
+-rw-r--r--  1 zelinwei  staff  616564462  9  1 04:02 SRR072893.bam
+-rw-r--r--  1 zelinwei  staff     239600  9  3 16:27 SRR072893.bam.bai
+-rw-r--r--  1 zelinwei  staff          0  9  3 16:28 directory.txt
