@@ -101,6 +101,8 @@ The results are:
 </center>
 
 The column 'Length' corresponds to the length of the contigs.
+
+Thus the total length of all contigs is 234,467 bp.
 ### Q3c
 	sort -k 2 -nr assembled/contigs.fasta.fai|head -1
 This line gives that NODE\_1\_length\_105831\_cov\_20.671371 is the biggest contig with a length of 105,831 bp.
@@ -129,7 +131,7 @@ Download the decoder script:
 	wget https://raw.githubusercontent.com/bxlab/qbb2020/master/week1/ported_decoder.py
 ### Q5a
 	show-coords out.delta
-It gives that the insertion should be on NODE\_3\_length\_41352\_cov\_20.588756: 13,854...14,565 bp.
+It gives that the insertion should be on NODE\_3\_length\_41352\_cov\_20.588756: 13,854...14,565 bp. It corresponds to 26,789...26,790 bp on the reference genome.
 ### Q5b
 The insertion length in my assembly is 712 bp according to <font color=#ea4335>`less out.report`</font> and <font color=#ea4335>`show-coords out.delta`</font>.
 ### Q5c
