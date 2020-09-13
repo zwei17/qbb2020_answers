@@ -5,4 +5,4 @@ The python script for N50 is GetN50.py.
 
 The quality plots are saved as .png files.
 
-The secret insertion sequence is saved as a .txt file.
+The secret insertion sequence is saved as a FASTA file.
