@@ -89,12 +89,17 @@ The line gives 4, meaning that we have 4 contigs.
 	head assembled/contigs.fasta.fai
 The results are:
 
+<center>
+
 |Name|Length|Offset|Linebases|Linewidth|
 |----|----|----|----|----|
 |NODE_1_length_105831_cov_20.671371|105831 | 36   |   60   |   61|
 |NODE_2_length_47861_cov_20.231319|47861 |  107666 | 60   |   61|
 |NODE_3_length_41352_cov_20.588756    |   41352 |  156360 | 60   |   61|
 |NODE_4_length_39423_cov_20.384723    |   39423 |  198437 | 60   |   61|
+
+</center>
+
 The column 'Length' corresponds to the length of the contigs.
 ### Q3c
 	sort -k 2 -nr assembled/contigs.fasta.fai|head -1
