@@ -102,3 +102,48 @@ Extract the first 1000 lines from the annotated `vcf` files and save them under 
 	
 `git commit` all files needed for submission.
 
+## Advanced Exercises
+
+### Coverage simulation
+
+#### Q1a
+
+50,000 reads (100 bp) are required to achieve a 5x coverage on 1M genome.
+
+#### Q1b
+
+A `python` script is written to achieve the simulation ([Cov_sim.py](Cov_sim.py)). Run:
+
+	python Cov_sim.py 5
+
+The figure for 5x coverage is:
+<center><img src = Cov5.png></center>
+
+#### Q1c
+
+There are 347 nts that have 0 read. From the plot in the right panel we can see that the results fit Poisson distribution very well.
+
+#### Q1d
+
+Run:
+	
+	python Cov_sim.py 15
+	
+The plots for 15x coverage is:
+<center><img src = Cov15.png></center>
+
+There are 6 nts with 0 read, and the results also fit Poisson distribution very well.
+
+### de Bruijn graph
+
+A `python` script is written for constructing de Bruijn graph ([deBruijn.py](deBruijn.py)):
+
+	python deBruijn.py seq_deBruijn.txt
+	
+The [contigs](Contigs_seq_deBruijn.txt) are:
+
+['ATTCATT', 'ATTGATT', 'TCTTATT', 'TTCATTG', 'TTCTTATTT', 'TTGATTG']
+
+One possible genome sequence would be:
+
+'TCTTATTCATTGATTTTCATTGATTGTTCTTATTT'

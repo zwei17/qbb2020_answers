@@ -1,0 +1,12 @@
+>Contig #0:
+ATTCATT
+>Contig #1:
+ATTGATT
+>Contig #2:
+TCTTATT
+>Contig #3:
+TTCATTG
+>Contig #4:
+TTCTTATTT
+>Contig #5:
+TTGATTG
