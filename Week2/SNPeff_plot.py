@@ -3,47 +3,55 @@
 import sys
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
 
-def SNPeff_plot(fname):
-	vcf = open(fname, 'r')
-	vcf.seek(0, 0)
-	df = {}
-	for line in vcf:
-		if '##' in line:
-			continue
-		if '#' in line:
-			header = line.rstrip().rsplit()
-			for each in header: 
-				df.setdefault(each, [])
-			continue
-		content = line.rstrip().rsplit(sep = '\t')
-		for i in range(len(content)):
-			df[header[i]].append(content[i])
-
-	df = pd.DataFrame(df)
-
-	DP = []
+def SNPeff_plot(suffix, output='Plots'):
 	GQ = []
+	DP = []
 	AF = []
 	ANN = {}
-	for each in df[fname.rsplit('.')[0] + '.fastq']:
-		GQ.append(float(each.rsplit(sep = ':')[1]))
-		DP.append(int(each.rsplit(sep = ':')[2]))
+	files = os.listdir()
+	for fname in files:
+                if suffix not in fname:
+                        continue
+                vcf = open(fname, 'r')
+                vcf.seek(0, 0)
+                df = {}
+                for line in vcf:
+                        if '##' in line:
+                                continue
+                        if '#' in line:
+                                header = line.rstrip().rsplit()
+                                for each in header: 
+                                        df.setdefault(each, [])
+                                continue
+                        content = line.rstrip().rsplit(sep = '\t')
+                        for i in range(len(content)):
+                                df[header[i]].append(content[i])
 
-	for each in df['INFO']:
-		info = each.rstrip().rsplit(sep = ';')
-		AF.append(float(info[3].rsplit('=')[1]))
-		for content in info:
-			if content[0:4] == 'ANN=':
-				snpeff_ann = content.rsplit(sep = ',')
-				for eachann in snpeff_ann:
-					eff = eachann.rsplit(sep = '|')[1]
-					ANN.setdefault(eff, 0)
-					ANN[eff] += 1
-				break
+                df = pd.DataFrame(df)
+
+                
+                for each in df[fname.rsplit('.')[0] + '.fastq']:
+                        GQ.append(float(each.rsplit(sep = ':')[1]))
+                        DP.append(int(each.rsplit(sep = ':')[2]))
+
+                for each in df['INFO']:
+                        info = each.rstrip().rsplit(sep = ';')
+                        AF.append(float(info[3].rsplit('=')[1]))
+                        for content in info:
+                                if content[0:4] == 'ANN=':
+                                        snpeff_ann = content.rsplit(sep = ',')
+                                        for eachann in snpeff_ann:
+                                                eff = eachann.rsplit(sep = '|')[1]
+                                                ANN.setdefault(eff, 0)
+                                                ANN[eff] += 1
+                                        break
+	df = {}
 	df['DP'] = DP
 	df['GQ'] = GQ
 	df['AF'] = AF
+	df = pd.DataFrame(df)
 	ANN = pd.Series(ANN)
 
 	fig, ax = plt.subplots(figsize = (10, 10), nrows = 2, ncols = 2)
@@ -63,11 +71,14 @@ def SNPeff_plot(fname):
 	ax[1, 1].set_title('SNPEFF annotation distribution')
 	ax[1, 1].set_ylabel('Counts')
 	ax[1, 1].set_xticklabels(ANN.keys(), rotation = 90)
-	plt.savefig(fname.rsplit('.')[0] + '.png', bbox_inches='tight')
+	plt.savefig(output + '.png', bbox_inches='tight')
 
 	vcf.close()
 
 	return fig
 
 if __name__ == '__main__':
-	SNPeff_plot(sys.argv[1])
+	if len(sys.argv) == 2:
+		SNPeff_plot(sys.argv[1])
+	else:
+		SNPeff_plot(sys.argv[1], sys.argv[2])
