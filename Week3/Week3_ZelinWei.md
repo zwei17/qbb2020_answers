@@ -37,8 +37,8 @@ The allele frequency spectrum is:
 Modify the phenotype file for `plink`:
 
 	header=`head -1 BYxRM_PhenoData.txt`
-	sed 's/_/   /' BYxRM_PhenoData.txt > BYxRM_PhenoData_modified.txt
-	sed -i '1d' BYxRM_PhenoData_modified.txt
+	sed 's/_/	/' BYxRM_PhenoData.txt > BYxRM_PhenoData_modified.txt
+	sed -i '' '1d' BYxRM_PhenoData_modified.txt
 	echo FID'\t'IID$header > Phenotypes.txt
 	cat BYxRM_PhenoData_modified.txt >> Phenotypes.txt
 	rm BYxRM_PhenoData_modified.txt
@@ -55,6 +55,7 @@ Run quantitative association testing:
 	
 A [`python` script](Manhattan_and_QQ.py) is used for generating Manhattan plots and QQ plots for all the traits:
 
+	mkdir Manhattan_and_QQ
 	for file in `find assoc_linear/`
 	do
 		echo $file > temp
