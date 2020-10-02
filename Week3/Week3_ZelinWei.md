@@ -49,7 +49,7 @@ Run PCA by `plink`:
 	 
 Run quantitative association testing:
 
-	plink --vcf BYxRM_segs_saccer3.bam.simplified.vcf --pheno Phenotypes.txt --all-pheno --linear --allow-no-sex --covar plink.eigenvec --covar-number 1-10 --allow-extra-chr
+	plink --vcf BYxRM_segs_saccer3.bam.simplified.vcf --pheno Phenotypes.txt --all-pheno --logistic --allow-no-sex --covar plink.eigenvec --covar-number 1-10 --allow-extra-chr
 	mkdir assoc_linear
 	mv *.assoc.linear assoc_linear
 	
