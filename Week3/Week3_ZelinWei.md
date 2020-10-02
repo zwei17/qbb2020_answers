@@ -85,4 +85,4 @@ Use `plink` to extract SNPs on this site:
 	
 Write a [`python` script](boxplot_chrII795756.py) to generate the boxplots:
 
-<center>![](Cadmium\_Chloride\_ChrII795756\_boxplot.png)</center>
+<center>![](Cadmium_Chloride_ChrII795756_boxplot.png)</center>
