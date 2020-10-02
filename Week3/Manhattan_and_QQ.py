@@ -13,8 +13,8 @@ def Manhattan_and_QQ(fname, outdir):
 
 	fig1, ax1 = plt.subplots(figsize = (8., 6.))
 	for chrs in assocLinear['CHR'].unique():
-		ax1.scatter(assocLinear['idx'][assocLinear['CHR'] == chrs][assocLinear['P<e-5?'] == False], assocLinear['-logP'][assocLinear['CHR'] == chrs][assocLinear['P<e-5?'] == False], marker = '.', color = '#555555' ,alpha = 0.2)
-		ax1.scatter(assocLinear['idx'][assocLinear['CHR'] == chrs][assocLinear['P<e-5?']], assocLinear['-logP'][assocLinear['CHR'] == chrs][assocLinear['P<e-5?']], marker = '.', color = '#FF0000' ,alpha = 0.2)
+		ax1.scatter(assocLinear['idx'][assocLinear['TEST'] == 'ADD'][assocLinear['CHR'] == chrs][assocLinear['P<e-5?'] == False], assocLinear['-logP'][assocLinear['TEST'] == 'ADD'][assocLinear['CHR'] == chrs][assocLinear['P<e-5?'] == False], marker = '.', color = '#555555' ,alpha = 0.2)
+		ax1.scatter(assocLinear['idx'][assocLinear['TEST'] == 'ADD'][assocLinear['CHR'] == chrs][assocLinear['P<e-5?']], assocLinear['-logP'][assocLinear['TEST'] == 'ADD'][assocLinear['CHR'] == chrs][assocLinear['P<e-5?']], marker = '.', color = '#FF0000' ,alpha = 0.2)
 
 	plt.xlabel("SNPs")
 	plt.ylabel("-log10(p)")
