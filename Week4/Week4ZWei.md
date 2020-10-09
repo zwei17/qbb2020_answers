@@ -15,7 +15,7 @@ Query sequence is downloaded and tools needed are  installed:
 
 The screenshot is shown below:
 
-<center>![](ScreenshotForBlast.png)</center>
+<center><img src=ScreenshotForBlast.png></center>
 
 In the **'Choose Search Set'** category, I chose **'Standard databases (nr etc.)'** for **'Database'**;
 
@@ -59,6 +59,6 @@ The z score for D (dN-dS) across all codons is -41.68, and the p value is very s
 
 The plot of log2 dN/dS ratio is shown below:
 
-<center>![](dNdSratio.png)</center>
+<center><img src=dNdSratio.png></center>
 
 The red dots represent codon with a p value less than 0.05.
