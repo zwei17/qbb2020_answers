@@ -15,7 +15,7 @@ Query sequence is downloaded and tools needed are  installed:
 
 The screenshot is shown below:
 
-<center>![]()</center>
+<center>![](ScreenshotForBlast.png)</center>
 
 In the **'Choose Search Set'** category, I chose **'Standard databases (nr etc.)'** for **'Database'**;
 
