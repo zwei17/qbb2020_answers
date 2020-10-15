@@ -40,6 +40,8 @@ Call peaks for each condition and write the output files into different director
 	macs2 callpeak -t CTCF_G1E.sam -c input_G1E.sam -f SAM --outdir G1E -n G1E -s 36
 	macs2 callpeak -t CTCF_ER4.sam -c input_ER4.sam -f SAM --outdir ER4 -n ER4 -s 36
 	
+The `narrowPeak` files are: [`G1E_peaks.narrowPeak`](G1E/G1E_peaks.narrowPeak) and [`ER4_peaks.narrowPeak`](ER4/ER4_peaks.narrowPeak).
+	
 ### Differential binding
 
 Use `bedtools` to spot peaks with differential binding under different conditions:
