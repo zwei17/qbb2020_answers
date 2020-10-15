@@ -48,6 +48,8 @@ Use `bedtools` to spot peaks with differential binding under different condition
 	# Find lost peaks.
 	bedtools intersect -a ER4/ER4_peaks.narrowPeak -b G1E/G1E_peaks.narrowPeak -v > Gainpeaks.bed
 	# Find gained peaks.
+
+The output files are [`Losspeaks.bed`](Losspeaks.bed) and [`Gainpeaks.bed`](Gainpeaks.bed).
 	
 ### Feature overlapping
 
