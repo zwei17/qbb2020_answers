@@ -74,6 +74,7 @@ The results are:
 ---
 
 <center>
+
 **Feature counts for peaks lost in ER4-induced differentiation**
 
 |Feature|Peak count number|
