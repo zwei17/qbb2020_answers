@@ -212,7 +212,7 @@ I use a `Python` script [`BinAbundanceHeatmap.py`](BinAbundanceHeatmap.py) to dr
 	
 Please note that the data are log-transformed due to the huge variance among bins. The [heatmap](BinAbundance.png) is shown below:
 
-<center><img src=BinAbundance.png></center>
+<center><img src=BinAbundance.png width=80%></center>
 
 --
 
