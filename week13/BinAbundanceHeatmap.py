@@ -20,4 +20,4 @@ ax.set_yticklabels(['', 'S. haemolyticus', 'E. faecalis', 'L. citreum', 'C. avid
 ax.set_title('Bin Abundance Heatmap')
 plt.xticks(rotation = 45)
 plt.show()
-fig.savefig('BinAbundance')
+fig.savefig('BinAbundanceHM')

@@ -210,9 +210,9 @@ I use a `Python` script [`BinAbundanceHeatmap.py`](BinAbundanceHeatmap.py) to dr
 
 	python BinAbundanceHeatmap.py
 	
-Please note that the data are log-transformed due to the huge variance among bins. The [heatmap](BinAbundance.png) is shown below:
+Please note that the data are log-transformed due to the huge variance among bins. The [heatmap](BinAbundanceHM.png) is shown below:
 
-<center><img src=BinAbundance.png width=80%></center>
+<center><img src=BinAbundanceHM.png width=80%></center>
 
 --
 
